@@ -1,0 +1,1425 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;700;900&display=swap");
+
+:root {
+  --bg: #fff6ed;
+  --bg-soft: #fff1e5;
+  --paper: rgba(255, 255, 255, 0.74);
+  --paper-strong: rgba(255, 255, 255, 0.92);
+  --ink: #191116;
+  --muted: #52454d;
+  --line: rgba(135, 56, 38, 0.14);
+  --red-deep: #7f1d2d;
+  --red-rich: #a72f33;
+  --red: #d84f35;
+  --orange: #ff9d47;
+  --gold: #f4c95d;
+  --jade-deep: #0e6a67;
+  --jade: #139189;
+  --jade-soft: #d7f3ef;
+  --peach: #ffe0d0;
+  --shadow: 0 26px 70px rgba(116, 38, 31, 0.14);
+  --shadow-strong: 0 30px 90px rgba(76, 12, 19, 0.24);
+  --radius-xl: 32px;
+  --radius-lg: 26px;
+  --radius-md: 20px;
+  --radius-sm: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 10% 12%, rgba(255, 157, 71, 0.22), transparent 24%),
+    radial-gradient(circle at 88% 8%, rgba(19, 145, 137, 0.18), transparent 22%),
+    radial-gradient(circle at 72% 70%, rgba(216, 79, 53, 0.12), transparent 26%),
+    linear-gradient(180deg, #fff8f1 0%, #fff0e4 42%, #fff8f0 100%);
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 20% 22%, rgba(255, 255, 255, 0.75), transparent 16%),
+    radial-gradient(circle at 82% 18%, rgba(244, 201, 93, 0.18), transparent 16%),
+    radial-gradient(circle at 78% 84%, rgba(19, 145, 137, 0.08), transparent 24%);
+}
+
+body::after {
+  opacity: 0.42;
+  background-image:
+    linear-gradient(rgba(127, 29, 45, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127, 29, 45, 0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 92%);
+}
+
+.texture {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.45), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 28%);
+  mix-blend-mode: screen;
+}
+
+.utility-bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(90deg, rgba(108, 18, 35, 0.96), rgba(145, 46, 39, 0.94) 42%, rgba(14, 106, 103, 0.92));
+  color: rgba(255, 244, 236, 0.88);
+}
+
+.utility-inner,
+.hero,
+.page-shell,
+.footer {
+  width: min(1200px, calc(100% - 28px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.utility-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 48px;
+}
+
+.utility-inner p,
+.brand-cn,
+.brand-en,
+.hero-text,
+.hero-card p,
+.info-card p,
+.news-list,
+.school-card p,
+.service-card span,
+.footer p,
+.footer-column a,
+.scenery-caption span {
+  margin: 0;
+}
+
+.utility-inner p,
+.utility-links a {
+  font-size: 0.88rem;
+}
+
+.utility-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.utility-links a {
+  color: rgba(255, 244, 236, 0.9);
+  text-decoration: none;
+}
+
+.utility-links a:hover {
+  color: #fff;
+}
+
+.hero,
+.section,
+.footer {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  margin-top: 14px;
+  padding: 28px 30px 36px;
+  color: #fff5ee;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(255, 174, 92, 0.18), transparent 20%),
+    radial-gradient(circle at 88% 20%, rgba(53, 221, 209, 0.18), transparent 18%),
+    linear-gradient(132deg, rgba(92, 13, 28, 0.98) 0%, rgba(148, 48, 39, 0.94) 34%, rgba(16, 112, 109, 0.92) 100%);
+  box-shadow: var(--shadow-strong);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: auto -110px -180px auto;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 201, 93, 0.34), transparent 64%);
+  filter: blur(12px);
+  animation: float-glow 16s ease-in-out infinite;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 24%),
+    linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.08) 48%, transparent 60%);
+  pointer-events: none;
+}
+
+.topbar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-logo {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+  border-radius: 18px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 16px 36px rgba(69, 9, 21, 0.22);
+  backdrop-filter: blur(10px);
+}
+
+.brand-cn,
+.hero h1,
+.section-heading h2,
+.hero-card h2,
+.footer h2,
+.footer-column h3,
+.panel-head h3,
+.scenery-copy h3,
+.scenery-caption strong {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "STZhongsong", "Songti SC", serif;
+}
+
+.brand-cn {
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.brand-en {
+  margin-top: 4px;
+  color: rgba(255, 238, 232, 0.8);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.96rem;
+  letter-spacing: 0.08em;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-links a {
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: rgba(255, 244, 236, 0.9);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.14fr 0.86fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.hero-slider,
+.hero-side,
+.hero-stats,
+.overview-grid,
+.hub-grid,
+.service-grid,
+.school-list,
+.footer-links,
+.scenery-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.slider-stage {
+  position: relative;
+  min-height: 520px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+    rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.slider-stage::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: calc(var(--radius-xl) - 2px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: end;
+  padding: 38px;
+  opacity: 0;
+  transform: translateX(24px) scale(1.01);
+  transition: opacity 420ms ease, transform 420ms ease;
+  background-position: center;
+  background-size: cover;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.slide-1 {
+  background-image:
+    linear-gradient(115deg, rgba(41, 7, 19, 0.88), rgba(41, 7, 19, 0.24) 56%),
+    linear-gradient(180deg, rgba(7, 9, 12, 0.06), rgba(7, 9, 12, 0.38)),
+    url("https://www.fjtcm.edu.cn/_upload/article/images/c7/71/b607b94e40668df2168497b85c30/9cafd470-fac4-49d8-ba0f-09b05fede013_s.jpg");
+}
+
+.slide-2 {
+  background-image:
+    linear-gradient(115deg, rgba(10, 38, 41, 0.86), rgba(10, 38, 41, 0.26) 56%),
+    linear-gradient(180deg, rgba(7, 9, 12, 0.06), rgba(7, 9, 12, 0.38)),
+    url("https://www.fjtcm.edu.cn/_upload/article/images/6d/25/cad2122e49b092e7db2ed793b502/fd7eaee2-144c-4823-bc47-891dda295e92_s.jpg");
+}
+
+.slide-3 {
+  background-image:
+    linear-gradient(115deg, rgba(87, 28, 8, 0.86), rgba(87, 28, 8, 0.24) 56%),
+    linear-gradient(180deg, rgba(7, 9, 12, 0.08), rgba(7, 9, 12, 0.4)),
+    url("https://www.fjtcm.edu.cn/_upload/article/images/3b/dc/7bc8358f4937ac36d7c2b7f0b293/f84d53d6-8def-4d70-87d0-6fbf2204d01d_s.jpg");
+}
+
+.slide-overlay {
+  max-width: 640px;
+  padding: 24px;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(22, 12, 20, 0.38), rgba(22, 12, 20, 0.12)),
+    rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 42px rgba(24, 9, 16, 0.16);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #ffe0a8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 9ch;
+  font-size: clamp(3.2rem, 7vw, 5.8rem);
+  line-height: 1.02;
+  text-wrap: balance;
+  text-shadow: 0 8px 26px rgba(30, 6, 14, 0.28);
+}
+
+.hero-text {
+  margin-top: 20px;
+  max-width: 560px;
+  color: rgba(255, 244, 236, 0.86);
+  font-size: 1.04rem;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.button:hover,
+.slider-dots .dot:hover {
+  transform: translateY(-2px);
+}
+
+.button.primary {
+  background: linear-gradient(135deg, var(--gold), var(--orange));
+  color: #4b1d0c;
+  box-shadow: 0 14px 28px rgba(255, 157, 71, 0.3);
+}
+
+.button.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fffaf5;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.slider-dots {
+  display: flex;
+  gap: 10px;
+  padding: 2px 6px 0;
+}
+
+.slider-dots .dot {
+  width: 40px;
+  height: 8px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background-color 180ms ease, transform 180ms ease, width 180ms ease;
+}
+
+.slider-dots .dot.active {
+  width: 54px;
+  background: linear-gradient(90deg, var(--gold), var(--orange));
+}
+
+.hero-side {
+  align-content: start;
+}
+
+.hero-stats {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.hero-card,
+.info-card,
+.panel,
+.service-card,
+.school-card,
+.footer-column,
+.scenery-card,
+.scenery-feature {
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05)),
+    rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), rgba(255, 255, 255, 0.8), var(--jade));
+}
+
+.hero-card-main {
+  min-height: 260px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 204, 112, 0.22), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06)),
+    rgba(255, 255, 255, 0.08);
+}
+
+.card-label {
+  color: #ffd8a3;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-card h2 {
+  margin: 14px 0;
+  font-size: 2.08rem;
+  line-height: 1.18;
+}
+
+.hero-card p,
+.hero-card a {
+  color: rgba(255, 244, 236, 0.84);
+  line-height: 1.8;
+}
+
+.hero-card a {
+  display: inline-block;
+  margin-top: 14px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.metric {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 2.15rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #fff7e7, #ffc66d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.page-shell,
+.footer {
+  margin-top: 24px;
+}
+
+.section,
+.footer {
+  padding: 36px 30px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 248, 242, 0.62)),
+    var(--paper);
+  backdrop-filter: blur(14px);
+}
+
+.section::before,
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 157, 71, 0.12), transparent 22%),
+    radial-gradient(circle at 0% 100%, rgba(19, 145, 137, 0.1), transparent 22%);
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: calc(var(--radius-xl) - 14px);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.section-heading {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+}
+
+.section-heading .eyebrow {
+  color: var(--red);
+}
+
+.section-heading h2,
+.footer h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.12;
+  text-wrap: balance;
+  color: var(--red-deep);
+  letter-spacing: 0.01em;
+  text-shadow: 0 8px 24px rgba(165, 65, 45, 0.08);
+}
+
+.overview-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 28px;
+}
+
+.overview-top {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 24px;
+  align-items: end;
+}
+
+.overview .section-heading h2 {
+  max-width: 11ch;
+  font-size: clamp(2.2rem, 4.4vw, 4.1rem);
+}
+
+.overview {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 196, 133, 0.26), transparent 18%),
+    linear-gradient(135deg, rgba(255, 242, 233, 0.96), rgba(255, 251, 247, 0.88) 42%, rgba(237, 251, 248, 0.82)),
+    rgba(255, 255, 255, 0.84);
+}
+
+.overview-intro {
+  padding: 24px 26px;
+  border: 1px solid rgba(216, 79, 53, 0.22);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(255, 229, 210, 0.94), rgba(255, 255, 255, 0.98)),
+    rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 46px rgba(145, 46, 39, 0.12);
+}
+
+.overview-intro p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.95;
+}
+
+.overview-strip {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+  padding: 14px;
+  border: 1px solid rgba(216, 79, 53, 0.14);
+  border-radius: 24px;
+  background:
+    linear-gradient(90deg, rgba(255, 231, 214, 0.96), rgba(216, 245, 240, 0.92)),
+    rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.overview-stat {
+  padding: 16px;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 246, 240, 0.78)),
+    rgba(255, 255, 255, 0.74);
+  text-align: center;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    0 14px 34px rgba(145, 46, 39, 0.08);
+}
+
+.overview-stat strong {
+  display: block;
+  color: var(--red-deep);
+  font-family: "Noto Serif SC", "Source Han Serif SC", "STZhongsong", "Songti SC", serif;
+  font-size: 1.82rem;
+  font-weight: 700;
+}
+
+.overview-stat span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.info-card,
+.panel,
+.service-card,
+.school-card,
+.footer-column,
+.scenery-card,
+.scenery-feature {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.7)),
+    var(--paper-strong);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.info-card:hover,
+.panel:hover,
+.service-card:hover,
+.school-card:hover,
+.footer-column:hover,
+.scenery-card:hover,
+.scenery-feature:hover {
+  transform: translateY(-4px);
+  border-color: rgba(216, 79, 53, 0.22);
+  box-shadow: 0 20px 48px rgba(144, 46, 39, 0.12);
+}
+
+.info-card::before,
+.panel::before,
+.service-card::before,
+.school-card::before,
+.footer-column::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--red), var(--orange), var(--jade));
+  opacity: 0.9;
+}
+
+.info-card h3,
+.school-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.18rem;
+}
+
+.info-index {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(216, 79, 53, 0.1), rgba(19, 145, 137, 0.12));
+  color: var(--red-deep);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.overview .info-card {
+  min-height: 260px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 157, 71, 0.22), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 247, 242, 0.8)),
+    rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 42px rgba(145, 46, 39, 0.1);
+}
+
+.overview .info-card h3 {
+  margin-bottom: 14px;
+  font-size: 1.42rem;
+}
+
+.overview .info-card p {
+  font-size: 1.02rem;
+  line-height: 1.92;
+}
+
+.info-card p,
+.school-card p,
+.footer p {
+  color: var(--muted);
+  line-height: 1.84;
+}
+
+.scenery-grid {
+  grid-template-columns: 1.28fr 0.72fr 0.72fr;
+  margin-top: 28px;
+}
+
+.scenery {
+  background:
+    radial-gradient(circle at 88% 16%, rgba(244, 201, 93, 0.22), transparent 20%),
+    linear-gradient(135deg, rgba(255, 248, 241, 0.95), rgba(255, 255, 255, 0.9) 40%, rgba(237, 248, 247, 0.84)),
+    rgba(255, 255, 255, 0.84);
+}
+
+.scenery-feature {
+  display: grid;
+  grid-template-rows: 290px auto;
+  padding: 0;
+}
+
+.scenery-card {
+  padding: 0;
+}
+
+.scenery-photo {
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.photo-aerial {
+  background-image:
+    linear-gradient(180deg, rgba(18, 11, 14, 0.08), rgba(18, 11, 14, 0.34)),
+    url("https://www.fjtcm.edu.cn/_upload/article/images/c7/71/b607b94e40668df2168497b85c30/9cafd470-fac4-49d8-ba0f-09b05fede013_s.jpg");
+}
+
+.photo-gate {
+  min-height: 330px;
+  background-image:
+    linear-gradient(180deg, rgba(18, 11, 14, 0.04), rgba(18, 11, 14, 0.28)),
+    url("https://www.fjtcm.edu.cn/_upload/article/images/6d/25/cad2122e49b092e7db2ed793b502/fd7eaee2-144c-4823-bc47-891dda295e92_s.jpg");
+}
+
+.photo-library {
+  min-height: 330px;
+  background-image:
+    linear-gradient(180deg, rgba(18, 11, 14, 0.06), rgba(18, 11, 14, 0.28)),
+    url("https://www.fjtcm.edu.cn/_upload/article/images/3b/dc/7bc8358f4937ac36d7c2b7f0b293/f84d53d6-8def-4d70-87d0-6fbf2204d01d_s.jpg");
+}
+
+.scenery-copy,
+.scenery-caption {
+  padding: 22px 22px 24px;
+}
+
+.scenery-kicker {
+  margin: 0 0 8px;
+  color: var(--jade-deep);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.scenery-copy h3 {
+  margin: 0 0 12px;
+  font-size: 1.56rem;
+  line-height: 1.28;
+}
+
+.scenery-copy p,
+.scenery-caption span {
+  color: var(--muted);
+  line-height: 1.78;
+}
+
+.scenery-caption strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.hub-grid {
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 28px;
+}
+
+.content-hub {
+  color: #fff3ea;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 174, 92, 0.18), transparent 18%),
+    radial-gradient(circle at 86% 84%, rgba(67, 230, 219, 0.14), transparent 22%),
+    linear-gradient(135deg, rgba(74, 12, 28, 0.98), rgba(120, 31, 39, 0.95) 45%, rgba(11, 88, 86, 0.93));
+  box-shadow: 0 28px 80px rgba(70, 14, 24, 0.22);
+}
+
+.content-hub::before {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 24%),
+    radial-gradient(circle at 100% 0%, rgba(255, 184, 112, 0.16), transparent 22%),
+    radial-gradient(circle at 0% 100%, rgba(127, 247, 238, 0.12), transparent 22%);
+}
+
+.content-hub::after {
+  border-color: rgba(255, 255, 255, 0.16);
+  opacity: 1;
+}
+
+.content-hub .section-heading .eyebrow {
+  color: #ffd69a;
+}
+
+.content-hub .section-heading h2 {
+  color: #fff7f2;
+  text-shadow: 0 12px 30px rgba(18, 7, 12, 0.28);
+}
+
+.content-hub .panel {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 251, 0.96), rgba(255, 244, 237, 0.84)),
+    rgba(255, 255, 255, 0.94);
+  box-shadow: 0 24px 54px rgba(23, 7, 12, 0.18);
+}
+
+.content-hub .panel:nth-child(2n) {
+  background:
+    linear-gradient(180deg, rgba(247, 255, 254, 0.96), rgba(235, 249, 246, 0.84)),
+    rgba(255, 255, 255, 0.94);
+}
+
+.content-hub .panel:nth-child(3n) {
+  background:
+    linear-gradient(180deg, rgba(255, 249, 238, 0.96), rgba(255, 239, 215, 0.86)),
+    rgba(255, 255, 255, 0.94);
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.panel-head h3 {
+  margin: 0;
+  font-size: 1.46rem;
+  color: var(--red-deep);
+}
+
+.panel-head a {
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.content-hub .panel-head a {
+  color: var(--jade-deep);
+}
+
+.news-list {
+  padding: 0;
+  list-style: none;
+}
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: start;
+  padding: 14px 0;
+  border-top: 1px solid rgba(127, 29, 45, 0.08);
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.news-list li:hover {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.36);
+}
+
+.news-list li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.news-list a {
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1.72;
+  font-weight: 600;
+}
+
+.news-list span {
+  color: var(--red-rich);
+  white-space: nowrap;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(216, 79, 53, 0.08);
+}
+
+.notice-list li:last-child span {
+  color: var(--jade-deep);
+  font-weight: 800;
+}
+
+.service-grid {
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 28px;
+}
+
+.services {
+  background:
+    radial-gradient(circle at 8% 14%, rgba(19, 145, 137, 0.14), transparent 18%),
+    radial-gradient(circle at 92% 16%, rgba(255, 157, 71, 0.16), transparent 20%),
+    linear-gradient(135deg, rgba(239, 250, 248, 0.98), rgba(255, 249, 242, 0.92) 40%, rgba(255, 240, 229, 0.88)),
+    rgba(255, 255, 255, 0.86);
+}
+
+.services .section-heading h2,
+.schools .section-heading h2 {
+  max-width: 13ch;
+}
+
+.service-card {
+  text-decoration: none;
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 246, 239, 0.88)),
+    rgba(255, 255, 255, 0.9);
+  min-height: 178px;
+  box-shadow: 0 18px 40px rgba(24, 32, 29, 0.08);
+}
+
+.service-card:nth-child(2n) {
+  background:
+    linear-gradient(180deg, rgba(244, 255, 253, 0.98), rgba(223, 248, 243, 0.88)),
+    rgba(255, 255, 255, 0.92);
+}
+
+.service-card:nth-child(3n) {
+  background:
+    linear-gradient(180deg, rgba(255, 249, 235, 0.98), rgba(255, 235, 198, 0.9)),
+    rgba(255, 255, 255, 0.92);
+}
+
+.service-card strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.12rem;
+  color: var(--red-deep);
+}
+
+.service-card span {
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.school-list {
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 28px;
+}
+
+.schools {
+  background:
+    radial-gradient(circle at 14% 22%, rgba(255, 198, 124, 0.2), transparent 18%),
+    radial-gradient(circle at 88% 82%, rgba(19, 145, 137, 0.12), transparent 22%),
+    linear-gradient(135deg, rgba(255, 244, 238, 0.96), rgba(255, 255, 255, 0.92) 40%, rgba(245, 252, 251, 0.84)),
+    rgba(255, 255, 255, 0.86);
+}
+
+.school-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 246, 242, 0.82)),
+    rgba(255, 255, 255, 0.92);
+  min-height: 188px;
+}
+
+.school-card span {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: var(--red);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.school-card h3 {
+  color: var(--red-deep);
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 22px;
+  margin-bottom: 18px;
+  color: #fff2ea;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(255, 174, 92, 0.18), transparent 22%),
+    radial-gradient(circle at 88% 22%, rgba(53, 221, 209, 0.16), transparent 18%),
+    linear-gradient(135deg, rgba(71, 12, 24, 0.98), rgba(122, 32, 37, 0.96) 38%, rgba(13, 92, 90, 0.94));
+}
+
+.footer::before {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 24%),
+    linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.07) 52%, transparent 64%);
+}
+
+.footer-main,
+.footer-column {
+  position: relative;
+  z-index: 1;
+}
+
+.footer .eyebrow {
+  color: #ffd8a3;
+}
+
+.footer-main p,
+.footer-column a {
+  color: rgba(255, 243, 236, 0.8);
+}
+
+.footer-links {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.footer-column {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)),
+    rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.footer-column::before {
+  background: linear-gradient(90deg, var(--gold), rgba(255, 255, 255, 0.8), #7ff7ee);
+}
+
+.footer-column h3 {
+  margin: 0 0 14px;
+  font-size: 1.16rem;
+  color: #fff7f1;
+}
+
+.footer-column a {
+  display: block;
+  text-decoration: none;
+  line-height: 2;
+}
+
+.footer-column a:hover {
+  color: #fff;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 680ms ease, transform 680ms ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float-glow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-18px, -16px, 0) scale(1.06);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-grid,
+  .overview-top,
+  .overview-grid,
+  .hub-grid,
+  .service-grid,
+  .school-list,
+  .footer,
+  .scenery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .overview-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scenery-feature {
+    grid-template-rows: 260px auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .utility-inner,
+  .hero,
+  .page-shell,
+  .footer {
+    width: min(100% - 16px, 1200px);
+  }
+
+  .hero,
+  .section,
+  .footer {
+    padding: 22px 16px 24px;
+    border-radius: 24px;
+  }
+
+  .utility-inner {
+    min-height: 54px;
+    padding: 8px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .brand {
+    align-items: flex-start;
+  }
+
+  .brand-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+  }
+
+  .brand-en {
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-grid {
+    margin-top: 26px;
+  }
+
+  .slider-stage {
+    min-height: 480px;
+  }
+
+  .slide {
+    padding: 18px;
+  }
+
+  .slide-overlay {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: 2.8rem;
+  }
+
+  .hero-text {
+    font-size: 0.96rem;
+    line-height: 1.82;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .hero-card,
+  .info-card,
+  .panel,
+  .service-card,
+  .school-card,
+  .footer-column {
+    padding: 18px;
+  }
+
+  .hero-card h2 {
+    font-size: 1.65rem;
+  }
+
+  .metric {
+    font-size: 1.9rem;
+  }
+
+  .overview-strip,
+  .hero-stats,
+  .service-grid,
+  .school-list,
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    gap: 12px;
+  }
+
+  .overview .section-heading h2 {
+    max-width: 100%;
+    font-size: 2.55rem;
+  }
+
+  .news-list li {
+    grid-template-columns: 1fr;
+  }
+
+  .news-list span {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 560px) {
+  body::after,
+  .texture {
+    opacity: 0.18;
+  }
+
+  .hero,
+  .section,
+  .footer {
+    padding: 18px 14px 20px;
+    border-radius: 20px;
+  }
+
+  .section::after {
+    inset: 10px;
+    border-radius: 14px;
+  }
+
+  .utility-inner,
+  .hero,
+  .page-shell,
+  .footer {
+    width: min(100% - 12px, 1200px);
+  }
+
+  .utility-links {
+    gap: 10px;
+  }
+
+  .utility-links a,
+  .utility-inner p {
+    font-size: 0.8rem;
+  }
+
+  .slider-stage {
+    min-height: 450px;
+  }
+
+  .slide {
+    padding: 14px;
+  }
+
+  .slide-overlay {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+  }
+
+  .hero h1 {
+    font-size: 2.28rem;
+  }
+
+  .section-heading h2,
+  .footer h2,
+  .overview .section-heading h2 {
+    font-size: 2rem;
+    line-height: 1.18;
+  }
+
+  .overview-intro,
+  .overview-strip,
+  .hero-card,
+  .panel,
+  .info-card,
+  .service-card,
+  .school-card,
+  .footer-column {
+    border-radius: 18px;
+  }
+
+  .panel-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .panel-head h3 {
+    font-size: 1.28rem;
+  }
+
+  .news-list a {
+    font-size: 0.95rem;
+    line-height: 1.66;
+  }
+
+  .news-list span {
+    padding: 5px 9px;
+    font-size: 0.8rem;
+  }
+
+  .service-card,
+  .school-card {
+    min-height: auto;
+  }
+
+  .scenery-feature {
+    grid-template-rows: 220px auto;
+  }
+
+  .photo-gate,
+  .photo-library {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 400px) {
+  .brand {
+    gap: 12px;
+  }
+
+  .brand-cn {
+    font-size: 1rem;
+  }
+
+  .brand-en {
+    font-size: 0.74rem;
+  }
+
+  .slider-stage {
+    min-height: 430px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text,
+  .overview-intro p,
+  .overview .info-card p,
+  .info-card p,
+  .school-card p,
+  .service-card span,
+  .scenery-copy p,
+  .scenery-caption span,
+  .footer p,
+  .footer-column a {
+    font-size: 0.92rem;
+    line-height: 1.74;
+  }
+}
